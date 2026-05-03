@@ -1,0 +1,145 @@
+html.dark {
+  color-scheme: dark;
+}
+
+.v-card--variant-elevated:not(.v-card--flat) {
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+}
+
+.v-theme--light {
+  &.v-icon--clickable,
+  &.v-btn--icon {
+    color: rgba(0, 0, 0, 0.54);
+  }
+  --v-border-opacity: 0.09;
+  --v-theme-background: 244, 246, 245;
+  --app-shell-surface: 255, 255, 255;
+  --app-shell-surface-muted: 249, 251, 250;
+  --app-shell-border: 208, 216, 213;
+  --app-shell-shadow: 15, 23, 42;
+  --app-shell-shadow-opacity: 0.12;
+  --app-shell-shadow-strong-opacity: 0.18;
+  --app-shell-text-primary: 15, 23, 42;
+  --app-shell-text-secondary: 46, 62, 82;
+  --app-shell-text-muted: 71, 85, 105;
+  --app-shell-surface-strong: 255, 255, 255;
+}
+
+.v-theme--dark {
+  --v-theme-background: 19, 24, 23;
+  --app-shell-surface: 28, 34, 32;
+  --app-shell-surface-muted: 24, 29, 28;
+  --app-shell-border: 67, 80, 76;
+  --app-shell-shadow: 0, 0, 0;
+  --app-shell-shadow-opacity: 0.34;
+  --app-shell-shadow-strong-opacity: 0.48;
+  --app-shell-text-primary: 236, 242, 239;
+  --app-shell-text-secondary: 191, 202, 197;
+  --app-shell-text-muted: 154, 168, 161;
+  --app-shell-surface-strong: 36, 43, 41;
+}
+
+.v-main {
+  background-color: rgb(var(--v-theme-background));
+}
+
+.v-app-bar.app-shell-bar {
+  background-color: rgb(var(--app-shell-surface));
+  border-bottom: 1px solid rgba(var(--app-shell-border), 0.65);
+  box-shadow: 0 16px 30px -28px
+    rgba(var(--app-shell-shadow), var(--app-shell-shadow-opacity));
+  backdrop-filter: blur(14px);
+}
+
+.v-navigation-drawer.app-shell-drawer {
+  background: linear-gradient(
+    180deg,
+    rgba(var(--app-shell-surface), 0.98) 0%,
+    rgba(var(--app-shell-surface-muted), 0.98) 100%
+  );
+  border: 1px solid rgba(var(--app-shell-border), 0.55);
+  box-shadow: 0 22px 44px -32px
+    rgba(var(--app-shell-shadow), var(--app-shell-shadow-strong-opacity));
+}
+
+.v-navigation-drawer.app-shell-drawer .v-list-item--active {
+  background-color: rgba(var(--v-theme-primary), 0.12);
+}
+
+.v-navigation-drawer.app-shell-drawer .v-list-item:hover {
+  background-color: rgba(var(--v-theme-primary), 0.08);
+}
+
+.v-footer {
+  background-color: rgb(var(--app-shell-surface));
+  border-top: 1px solid rgba(var(--app-shell-border), 0.5);
+}
+
+.v-overlay__content > .v-card {
+  overflow-y: auto;
+}
+
+.v-data-table-footer {
+  .v-field__input {
+    min-height: 36px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.v-tab {
+  border-radius: 0;
+}
+
+.v-list-item-title {
+  text-overflow: unset;
+}
+
+.v-breadcrumbs-divider {
+  opacity: 0.5;
+}
+
+.v-icon .iconify {
+  width: 100%;
+  height: 100%;
+}
+
+.app-surface-gradient {
+  border: 1px solid rgba(var(--app-shell-border), 0.45);
+  background: linear-gradient(
+    180deg,
+    rgba(var(--app-shell-surface), 0.98) 0%,
+    rgba(var(--app-shell-surface-muted), 0.98) 100%
+  );
+}
+
+.app-page {
+  padding-block: 24px 32px;
+}
+
+.app-table-text {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.app-table-text--strong {
+  font-weight: 600;
+}
+
+.app-table-text--secondary {
+  color: rgb(var(--app-shell-text-secondary));
+}
+
+.app-table-text--muted {
+  color: rgb(var(--app-shell-text-muted));
+}
+
+.app-table-center {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
