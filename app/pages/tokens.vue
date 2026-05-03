@@ -18,10 +18,9 @@ const createDialogOpen = shallowRef(false)
 const createdTokenDialogOpen = shallowRef(false)
 const revokeDialog = useTargetDialog<UserToken>()
 
-const activeTokenLabel = computed(() => {
-  const active = userTokens.activeTokensCount.value
-  return active === 1 ? '1 active' : `${active} active`
-})
+const filteredTokenLabel = computed(
+  () => `${userTokens.total.value} ${userTokens.statusFilter.value}`,
+)
 
 // createToken submits the token form and opens the one-time secret dialog.
 async function createToken(payload: UserTokenPayload) {
@@ -56,7 +55,7 @@ async function confirmRevoke() {
           title="Virtual keys"
           copy="Create and revoke virtual keys for your own service access."
           stat-label="Keys"
-          :stat-value="activeTokenLabel"
+          :stat-value="filteredTokenLabel"
         />
       </v-col>
 
