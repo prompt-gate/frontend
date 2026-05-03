@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import AdminProviderDialog from '~/components/AdminProviders/AdminProviderDialog.vue'
 import type { Provider, ProviderPayload } from '~/types/providers'
 
 definePageMeta({
