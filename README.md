@@ -32,11 +32,13 @@ NUXT_PUBLIC_API_BASE_URL=http://localhost:8080
 
 ```sh
 npm run typecheck
+npm run lint:check
 npm test -- --run
 npm run build
 ```
 
-The `npm run lint` script runs ESLint with automatic fixes enabled.
+The `npm run lint:check` script fails on warnings. The `npm run lint` script
+runs ESLint with automatic fixes enabled.
 
 ## Documentation
 

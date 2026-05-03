@@ -84,8 +84,8 @@ async function saveRule(payload: FirewallRulePayload) {
   }
 }
 
-// toggleOverride updates the service-account firewall override flag.
-async function toggleOverride(value: boolean | null) {
+// handleToggleOverride updates the service-account firewall override flag.
+async function handleToggleOverride(value: boolean | null) {
   try {
     await props.toggleOverride(Boolean(value))
   } catch {
@@ -93,8 +93,11 @@ async function toggleOverride(value: boolean | null) {
   }
 }
 
-// moveRule updates scoped firewall priority.
-async function moveRule(rule: FirewallRule, direction: FirewallMoveDirection) {
+// handleMoveRule updates scoped firewall priority.
+async function handleMoveRule(
+  rule: FirewallRule,
+  direction: FirewallMoveDirection,
+) {
   try {
     await props.moveRule(rule, direction)
   } catch {
@@ -102,8 +105,8 @@ async function moveRule(rule: FirewallRule, direction: FirewallMoveDirection) {
   }
 }
 
-// toggleRule flips scoped firewall rule enabled state.
-async function toggleRule(rule: FirewallRule) {
+// handleToggleRule flips scoped firewall rule enabled state.
+async function handleToggleRule(rule: FirewallRule) {
   try {
     await props.toggleRule(rule)
   } catch {
@@ -155,7 +158,7 @@ async function refreshRules() {
             label="Firewall override"
             :disabled="!props.account || props.saving"
             :model-value="overrideEnabled"
-            @update:model-value="toggleOverride"
+            @update:model-value="handleToggleOverride"
           />
 
           <v-chip
@@ -214,8 +217,8 @@ async function refreshRules() {
         :total="props.total"
         @delete="deleteDialog.open"
         @edit="openEditRuleDialog"
-        @move="moveRule"
-        @toggle="toggleRule"
+        @move="handleMoveRule"
+        @toggle="handleToggleRule"
         @update:page="emit('update:page', $event)"
         @update:page-size="emit('update:page-size', $event)"
         @update:sort="

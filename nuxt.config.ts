@@ -65,7 +65,23 @@ export default defineNuxtConfig({
     ],
   },
   vite: {
-    build: { sourcemap: false },
+    build: {
+      sourcemap: false,
+      cssMinify: 'lightningcss',
+      chunkSizeWarningLimit: 1000,
+      rollupOptions: {
+        onwarn(warning, defaultHandler) {
+          if (
+            warning.message.includes('Sourcemap is likely to be incorrect') &&
+            warning.message.includes('nuxt:module-preload-polyfill')
+          ) {
+            return
+          }
+
+          defaultHandler(warning)
+        },
+      },
+    },
   },
   runtimeConfig: {
     public: {

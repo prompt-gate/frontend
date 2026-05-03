@@ -14,6 +14,7 @@ const props = withDefaults(
   }>(),
   {
     ariaLabel: 'Open actions',
+    item: undefined,
     label: 'Action',
     minWidth: 180,
   },
