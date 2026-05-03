@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import type { UserToken } from '~/types/user-service'
 import type { AdminUser } from '~/types/users'
+import AdminUserDeleteDialog from '~/components/AdminUsers/AdminUserDeleteDialog.vue'
+import AdminUserEditDialog from '~/components/AdminUsers/AdminUserEditDialog.vue'
 import AdminUserTokensDialog from '~/components/AdminUsers/AdminUserTokensDialog.vue'
 
 definePageMeta({

@@ -11,6 +11,7 @@ import type {
   FirewallRulePayload,
   FirewallSimulationResponse,
 } from '~/types/firewall'
+import AdminServiceAccountDialog from '~/components/AdminServiceAccounts/AdminServiceAccountDialog.vue'
 import AdminServiceAccountFirewallDialog from '~/components/AdminServiceAccounts/AdminServiceAccountFirewallDialog.vue'
 import AdminServiceAccountTokenCreatedDialog from '~/components/AdminServiceAccounts/AdminServiceAccountTokenCreatedDialog.vue'
 import AdminServiceAccountTokensDialog from '~/components/AdminServiceAccounts/AdminServiceAccountTokensDialog.vue'
